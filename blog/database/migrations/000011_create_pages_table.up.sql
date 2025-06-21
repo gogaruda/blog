@@ -1,11 +1,12 @@
 CREATE TABLE pages (
     id VARCHAR(26) NOT NULL UNIQUE PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL UNIQUE,
     slug VARCHAR(255) NOT NULL UNIQUE,
     content LONGTEXT NOT NULL,
-    seo_title VARCHAR(255),
-    seo_description VARCHAR(255),
+    seo_title VARCHAR(60),
+    seo_description VARCHAR(160),
     status ENUM('draft', 'published') DEFAULT 'draft',
     published_at DATETIME,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

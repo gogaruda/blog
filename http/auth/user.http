@@ -1,36 +1,36 @@
 ### Ambil semua data
-GET http://localhost:8080/api/auth/users?page=3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA0MjE5MzIsImlhdCI6MTc1MDMzNTUzMiwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk0MjFCM0JYQUEyUERFSzlZUkRTRE1LIiwidXNlcl9pZCI6IjAxSlhZVDlZWjRLUjYzRFEzOVo2OE4zN1JLIn0.a1Xg_SNADCR4qOYDTY3flOMJZzkHGFaAK6Re_1yF4uw
+GET http://localhost:8080/api/auth/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkxMjMsImlhdCI6MTc1MDUzMjcyMywicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTM1NTVUM1FFVjcyMkoxVjhKWTk4IiwidXNlcl9pZCI6IjAxSlk5TVZESjFCSDFHUDMxQ1hDWDczODhOIn0.hcLfQf2CTGJfIhWqu9jnFPWqxGZaEOD7iH4V2qf0Fhg
 
 ### Create
 POST http://localhost:8080/api/auth/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA0MjE5MzIsImlhdCI6MTc1MDMzNTUzMiwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk0MjFCM0JYQUEyUERFSzlZUkRTRE1LIiwidXNlcl9pZCI6IjAxSlhZVDlZWjRLUjYzRFEzOVo2OE4zN1JLIn0.a1Xg_SNADCR4qOYDTY3flOMJZzkHGFaAK6Re_1yF4uw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkxMjMsImlhdCI6MTc1MDUzMjcyMywicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTM1NTVUM1FFVjcyMkoxVjhKWTk4IiwidXNlcl9pZCI6IjAxSlk5TVZESjFCSDFHUDMxQ1hDWDczODhOIn0.hcLfQf2CTGJfIhWqu9jnFPWqxGZaEOD7iH4V2qf0Fhg
 Content-Type: application/json
 
 {
-    "username": "editor-saja",
-    "email": "editor-saja@gmail.com",
-    "password": "editor-saja",
-    "role_ids": ["01JXYT9YZ4Y728VWB60BNCAYD8", "678678g"]
+    "username": "admin-saja",
+    "email": "admin-saja@gmail.com",
+    "password": "admin-saja",
+    "role_ids": ["01JY9MVDJ8XNVBZ1HP9QCA713Q"]
 }
 ###
 
 ### Ambil data BY ID
 GET http://localhost:8080/api/auth/users/01JXYV40T83BVAC9TYG3A7MJ7T
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA0MjE5MzIsImlhdCI6MTc1MDMzNTUzMiwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk0MjFCM0JYQUEyUERFSzlZUkRTRE1LIiwidXNlcl9pZCI6IjAxSlhZVDlZWjRLUjYzRFEzOVo2OE4zN1JLIn0.a1Xg_SNADCR4qOYDTY3flOMJZzkHGFaAK6Re_1yF4uw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkxMjMsImlhdCI6MTc1MDUzMjcyMywicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTM1NTVUM1FFVjcyMkoxVjhKWTk4IiwidXNlcl9pZCI6IjAxSlk5TVZESjFCSDFHUDMxQ1hDWDczODhOIn0.hcLfQf2CTGJfIhWqu9jnFPWqxGZaEOD7iH4V2qf0Fhg
 
 ### Update Data
 PUT http://localhost:8080/api/auth/users/01JY12SQHBP2TJGG6CSG7ZANTY
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA0MjE5MzIsImlhdCI6MTc1MDMzNTUzMiwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk0MjFCM0JYQUEyUERFSzlZUkRTRE1LIiwidXNlcl9pZCI6IjAxSlhZVDlZWjRLUjYzRFEzOVo2OE4zN1JLIn0.a1Xg_SNADCR4qOYDTY3flOMJZzkHGFaAK6Re_1yF4uw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkxMjMsImlhdCI6MTc1MDUzMjcyMywicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTM1NTVUM1FFVjcyMkoxVjhKWTk4IiwidXNlcl9pZCI6IjAxSlk5TVZESjFCSDFHUDMxQ1hDWDczODhOIn0.hcLfQf2CTGJfIhWqu9jnFPWqxGZaEOD7iH4V2qf0Fhg
 Content-Type: application/json
 
 {
     "username": "tamu-beserta-penulis",
     "email": "tamu-beserta-penulis@gmail.com",
-    "role_ids": ["01JXYT9YZ4Y728VWB60BNCAYD8", "p"]
+    "role_ids": ["01JY9D574SD3C4KVT87J25DB2J"]
 }
 ###
 
 ### Delete data
 DELETE http://localhost:8080/api/auth/users/01JY0TS5HEQA
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA0MjE5MzIsImlhdCI6MTc1MDMzNTUzMiwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk0MjFCM0JYQUEyUERFSzlZUkRTRE1LIiwidXNlcl9pZCI6IjAxSlhZVDlZWjRLUjYzRFEzOVo2OE4zN1JLIn0.a1Xg_SNADCR4qOYDTY3flOMJZzkHGFaAK6Re_1yF4uw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkxMjMsImlhdCI6MTc1MDUzMjcyMywicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTM1NTVUM1FFVjcyMkoxVjhKWTk4IiwidXNlcl9pZCI6IjAxSlk5TVZESjFCSDFHUDMxQ1hDWDczODhOIn0.hcLfQf2CTGJfIhWqu9jnFPWqxGZaEOD7iH4V2qf0Fhg

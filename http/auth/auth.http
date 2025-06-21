@@ -1,14 +1,10 @@
-### Coba Auth
-GET http://localhost:8080/api/auth/coba-auth
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA1NzUyODEsImlhdCI6MTc1MDQ4ODg4MSwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk4TTk2RFg5NERTTVRBQ1pTSzcyR1kxIiwidXNlcl9pZCI6IjAxSlk4RkNFUlMyQ1hZQ1RaTUdGQkdYUDVWIn0.fQ5GkCusrYN0IKQn_rZbuvYuXRkQ9fG8DYV5xtHdqGM
-
 ### Login
 POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-    "identifier": "super-admin-1",
-    "password": "super-admin-1"
+    "identifier": "admin-saja",
+    "password": "admin-saja"
 }
 
 ### Registrasi
@@ -23,4 +19,4 @@ Content-Type: application/json
 
 ### Logout
 POST http://localhost:8080/api/auth/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA1NzUyODEsImlhdCI6MTc1MDQ4ODg4MSwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk4TTk2RFg5NERTTVRBQ1pTSzcyR1kxIiwidXNlcl9pZCI6IjAxSlk4RkNFUlMyQ1hZQ1RaTUdGQkdYUDVWIn0.fQ5GkCusrYN0IKQn_rZbuvYuXRkQ9fG8DYV5xtHdqGM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MDcyNjAsImlhdCI6MTc1MDUyMDg2MCwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5SlMzU1RTMVlXVzk4Q1dXQ0haVlFIIiwidXNlcl9pZCI6IjAxSlk5REUzTVpYMEtISFE0S1M4NkowR0ROIn0.iRCjxdvymn5MuPfc4vncg8MJOBCYEenL_xUkzCvo19M

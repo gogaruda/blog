@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 	authModule "github.com/gogaruda/auth/auth"
 	"github.com/gogaruda/auth/auth/config"
-	_ "github.com/gogaruda/auth/docs"
 	blogModule "github.com/gogaruda/blog/blog"
 	"github.com/gogaruda/pkg/middleware"
 	"os"
@@ -20,17 +19,6 @@ func getAllowedOrigins() []string {
 	return strings.Split(origins, ",")
 }
 
-// Swagger documentation
-// @title Blog - REST API Docs
-// @description Blog system
-// @version 1.0
-// @host localhost:8080
-// @BasePath /
-// @schemes http
-
-// @securityDefinitions.apikey BearerAuth
-// @in header
-// @name Authorization
 func main() {
 	config.LoadENV()
 	if os.Getenv("GIN_MODE") == "release" {

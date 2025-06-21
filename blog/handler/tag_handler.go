@@ -2,35 +2,53 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/gogaruda/blog/blog/dto/request"
 	"github.com/gogaruda/blog/blog/service"
 	"github.com/gogaruda/pkg/apperror"
 	"github.com/gogaruda/pkg/response"
+	"github.com/gogaruda/pkg/validates"
+	"strconv"
 )
 
 type TagHandler struct {
-	service service.TagService
+	service   service.TagService
+	Validator *validates.Validates
 }
 
-func NewTagHandler(s service.TagService) *TagHandler {
-	return &TagHandler{service: s}
+func NewTagHandler(s service.TagService, v *validates.Validates) *TagHandler {
+	return &TagHandler{service: s, Validator: v}
 }
 
-// GetAllTags godoc
-// @Summary Get all users with pagination
-// @Tags Tags
-// @Security BearerAuth
-// @Produce json
-// @Param page query int false "Page number" default(1)
-// @Param limit query int false "Items per page" default(10)
-// @Success 200 {object} response.SwaggerResponse
-// @Failure 401 {object} response.SwaggerResponse
-// @Router /api/blog/tags [get]
 func (h *TagHandler) GetAllTags(c *gin.Context) {
-	tags, err := h.service.GetAll()
+	page, _ := strconv.Atoi(c.DefaultQuery("page", "1"))
+	limit, _ := strconv.Atoi(c.DefaultQuery("limit", "10"))
+	offset := (page - 1) * limit
+
+	tags, total, err := h.service.GetAll(limit, offset)
 	if err != nil {
 		apperror.HandleHTTPError(c, err)
 		return
 	}
 
-	response.OK(c, tags, "query ok", nil)
+	meta := response.MetaData{
+		Page:  page,
+		Limit: limit,
+		Total: total,
+	}
+
+	response.OK(c, tags, "query ok", &meta)
+}
+
+func (h *TagHandler) CreateTag(c *gin.Context) {
+	var req request.TagRequest
+	if !h.Validator.ValidateJSON(c, &req) {
+		return
+	}
+
+	if err := h.service.Create(req); err != nil {
+		apperror.HandleHTTPError(c, err)
+		return
+	}
+
+	response.Created(c, nil, "query ok")
 }

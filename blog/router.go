@@ -2,24 +2,25 @@ package blog
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 	"github.com/gogaruda/auth/auth/middleware"
 	"github.com/gogaruda/blog/blog/handler"
 	"github.com/gogaruda/blog/blog/service"
+	"github.com/gogaruda/pkg/validates"
 )
 
 func RegisterBlogRoutes(
 	rg *gin.RouterGroup,
 	tagService service.TagService,
 ) {
-	tagHandler := handler.NewTagHandler(tagService)
+	v := validator.New()
+	validation := validates.NewValidates(v)
+
+	tagHandler := handler.NewTagHandler(tagService, validation)
 
 	auth := rg.Group("/")
 	auth.Use(middleware.AuthMiddleware())
-	{
-		admin := auth.Group("/")
-		admin.Use(middleware.RoleMiddleware(middleware.MatchAny, "super-admin"))
-		{
-			admin.GET("/tags", tagHandler.GetAllTags)
-		}
-	}
+	auth.GET("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor", "penulis"), tagHandler.GetAllTags)
+	auth.POST("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.CreateTag)
+
 }
