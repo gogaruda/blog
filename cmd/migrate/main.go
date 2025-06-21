@@ -1,9 +1,9 @@
 package main
 
 import (
-	blogDB "blog/blog/database"
 	"github.com/gogaruda/auth/auth/config"
 	authDB "github.com/gogaruda/auth/auth/database"
+	blogDB "github.com/gogaruda/blog/blog/database"
 	"log"
 )
 

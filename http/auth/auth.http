@@ -1,0 +1,26 @@
+### Coba Auth
+GET http://localhost:8080/api/auth/coba-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA1NzUyODEsImlhdCI6MTc1MDQ4ODg4MSwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk4TTk2RFg5NERTTVRBQ1pTSzcyR1kxIiwidXNlcl9pZCI6IjAxSlk4RkNFUlMyQ1hZQ1RaTUdGQkdYUDVWIn0.fQ5GkCusrYN0IKQn_rZbuvYuXRkQ9fG8DYV5xtHdqGM
+
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "identifier": "super-admin-1",
+    "password": "super-admin-1"
+}
+
+### Registrasi
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "tamu-saja",
+    "email": "tamu-saja@gmail.com",
+    "password": "tamu-saja"
+}
+
+### Logout
+POST http://localhost:8080/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA1NzUyODEsImlhdCI6MTc1MDQ4ODg4MSwicm9sZXMiOlsic3VwZXItYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk4TTk2RFg5NERTTVRBQ1pTSzcyR1kxIiwidXNlcl9pZCI6IjAxSlk4RkNFUlMyQ1hZQ1RaTUdGQkdYUDVWIn0.fQ5GkCusrYN0IKQn_rZbuvYuXRkQ9fG8DYV5xtHdqGM

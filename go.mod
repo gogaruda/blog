@@ -1,13 +1,12 @@
-module blog
+module github.com/gogaruda/blog
 
-go 1.24
+go 1.24.3
 
 require (
 	github.com/gin-gonic/gin v1.10.1
-	github.com/gogaruda/auth v1.3.1
+	github.com/gogaruda/auth v1.3.4
+	github.com/gogaruda/pkg v1.0.0
 	github.com/golang-migrate/migrate/v4 v4.18.3
-	github.com/swaggo/files v1.0.1
-	github.com/swaggo/gin-swagger v1.6.0
 )
 
 require (
@@ -17,7 +16,7 @@ require (
 	github.com/bytedance/sonic/loader v0.2.4 // indirect
 	github.com/cloudwego/base64x v0.1.5 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.9 // indirect
-	github.com/gin-contrib/cors v1.7.5 // indirect
+	github.com/gin-contrib/cors v1.7.6 // indirect
 	github.com/gin-contrib/sse v1.1.0 // indirect
 	github.com/go-openapi/jsonpointer v0.21.1 // indirect
 	github.com/go-openapi/jsonreference v0.21.0 // indirect
