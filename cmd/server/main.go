@@ -38,7 +38,7 @@ func main() {
 	authModule.RegisterAuthRoutes(api.Group("/auth"), auth.AuthService, auth.UserService)
 
 	// Module Blog
-	blogModule.RegisterBlogRoutes(api.Group("/blog"), blog.TagService)
+	blogModule.RegisterBlogRoutes(api.Group("/blog"), blog.TagService, blog.CategoryService)
 
 	port := os.Getenv("APP_PORT")
 	fmt.Println(port)

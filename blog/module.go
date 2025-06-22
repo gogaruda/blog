@@ -7,15 +7,19 @@ import (
 )
 
 type Module struct {
-	TagService service.TagService
+	TagService      service.TagService
+	CategoryService service.CategoryService
 }
 
 func InitBlogModule(db *sql.DB) *Module {
 	tagRepository := repository.NewTagRepository(db)
+	categoryRepository := repository.NewCategoryRepository(db)
 
 	tagService := service.NewTagService(tagRepository)
+	categoryService := service.NewCategoryService(categoryRepository)
 
 	return &Module{
-		TagService: tagService,
+		TagService:      tagService,
+		CategoryService: categoryService,
 	}
 }

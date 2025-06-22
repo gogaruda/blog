@@ -12,18 +12,25 @@ import (
 func RegisterBlogRoutes(
 	rg *gin.RouterGroup,
 	tagService service.TagService,
+	categoryService service.CategoryService,
 ) {
 	v := validator.New()
 	validation := validates.NewValidates(v)
 
 	tagHandler := handler.NewTagHandler(tagService, validation)
+	categoryHandler := handler.NewCategoryHandler(categoryService, validation)
 
 	auth := rg.Group("/")
 	auth.Use(middleware.AuthMiddleware())
+
+	// Tags
 	auth.GET("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor", "penulis"), tagHandler.GetAllTags)
 	auth.POST("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.CreateTag)
 	auth.GET("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.GetTagByID)
 	auth.PUT("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.UpdateTag)
 	auth.DELETE("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.DeleteTag)
 
+	// Categories
+	auth.GET("/categories", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor", "penulis"), categoryHandler.GetAllCategories)
+	auth.POST("/categories", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), categoryHandler.CreateCategory)
 }

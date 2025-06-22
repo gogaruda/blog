@@ -1,11 +1,12 @@
 package response
 
-type CategoryModel struct {
-	ID             string
-	Name           string
-	Slug           string
-	Description    string
-	ParentID       *string
-	SeoTitle       string
-	SeoDescription string
+type CategoryResponse struct {
+	ID             string              `json:"id"`
+	Name           string              `json:"name"`
+	Slug           string              `json:"slug"`
+	Description    string              `json:"description"`
+	ParentID       *string             `json:"parent_id"`
+	SeoTitle       string              `json:"seo_title"`
+	SeoDescription string              `json:"seo_description"`
+	Children       []*CategoryResponse `json:"children"`
 }
