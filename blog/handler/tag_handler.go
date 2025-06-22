@@ -52,3 +52,37 @@ func (h *TagHandler) CreateTag(c *gin.Context) {
 
 	response.Created(c, nil, "query ok")
 }
+
+func (h *TagHandler) GetTagByID(c *gin.Context) {
+	tagID := c.Param("id")
+	tag, err := h.service.GetByID(tagID)
+	if err != nil {
+		apperror.HandleHTTPError(c, err)
+		return
+	}
+
+	response.OK(c, tag, "query ok", nil)
+}
+
+func (h *TagHandler) UpdateTag(c *gin.Context) {
+	var req request.TagRequest
+	if !h.Validator.ValidateJSON(c, &req) {
+		return
+	}
+
+	if err := h.service.Update(c.Param("id"), req); err != nil {
+		apperror.HandleHTTPError(c, err)
+		return
+	}
+
+	response.Created(c, nil, "query ok")
+}
+
+func (h *TagHandler) DeleteTag(c *gin.Context) {
+	if err := h.service.Delete(c.Param("id")); err != nil {
+		apperror.HandleHTTPError(c, err)
+		return
+	}
+
+	response.NoContent(c)
+}

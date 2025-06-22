@@ -1,6 +1,6 @@
 CREATE TABLE tags (
     id VARCHAR(26) NOT NULL UNIQUE PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
     slug VARCHAR(100) NOT NULL UNIQUE,
     description TEXT,
     seo_title VARCHAR(60),

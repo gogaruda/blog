@@ -22,5 +22,8 @@ func RegisterBlogRoutes(
 	auth.Use(middleware.AuthMiddleware())
 	auth.GET("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor", "penulis"), tagHandler.GetAllTags)
 	auth.POST("/tags", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.CreateTag)
+	auth.GET("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.GetTagByID)
+	auth.PUT("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.UpdateTag)
+	auth.DELETE("/tags/:id", middleware.RoleMiddleware(middleware.MatchAny, "admin", "editor"), tagHandler.DeleteTag)
 
 }

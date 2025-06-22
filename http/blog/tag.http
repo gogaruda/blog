@@ -1,34 +1,34 @@
 ### Ambil semua data
 GET http://localhost:8080/api/blog/tags
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkyMDcsImlhdCI6MTc1MDUzMjgwNywicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTVQWUY4TjQyRVdQTk5HMDJTRFRDIiwidXNlcl9pZCI6IjAxSlk5WTRIVjBHV0U4S1ZWN1dUTTZZQ1BSIn0.PJH637XW6t3zvaJLVDV1SMo75yh-ztPmaCML7OE4nT4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2NjI5ODIsImlhdCI6MTc1MDU3NjU4Miwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSllCN1hNOTlSSFRRUUZUNVBESlcxSEdKIiwidXNlcl9pZCI6IjAxSllCN1RTQVRRQ1k4RlNYS0hOWEI1UE5DIn0.POZtQoxlnc1kM7-qTRbqHgc5n1EpDI8bQyHeS6BYpJM
 
 ### Create
 POST http://localhost:8080/api/blog/tags
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkyMDcsImlhdCI6MTc1MDUzMjgwNywicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTVQWUY4TjQyRVdQTk5HMDJTRFRDIiwidXNlcl9pZCI6IjAxSlk5WTRIVjBHV0U4S1ZWN1dUTTZZQ1BSIn0.PJH637XW6t3zvaJLVDV1SMo75yh-ztPmaCML7OE4nT4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2NjI5ODIsImlhdCI6MTc1MDU3NjU4Miwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSllCN1hNOTlSSFRRUUZUNVBESlcxSEdKIiwidXNlcl9pZCI6IjAxSllCN1RTQVRRQ1k4RlNYS0hOWEI1UE5DIn0.POZtQoxlnc1kM7-qTRbqHgc5n1EpDI8bQyHeS6BYpJM
 Content-Type: application/json
 
 {
-    "name": "Gagah Berani Lho",
-    "description": "Jang jawokan"
+    "name": "Panser Biru",
+    "description": "Ini adalah salah satu definisi panser biru yang merakyat",
+    "seo_description": "Panser biru yang merakyat"
 }
 ###
 
 ### Ambil data BY ID
-GET http://localhost:8080/api/blog/tags/01JXYV40T83BVAC9TYG3A7MJ7T
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkyMDcsImlhdCI6MTc1MDUzMjgwNywicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTVQWUY4TjQyRVdQTk5HMDJTRFRDIiwidXNlcl9pZCI6IjAxSlk5WTRIVjBHV0U4S1ZWN1dUTTZZQ1BSIn0.PJH637XW6t3zvaJLVDV1SMo75yh-ztPmaCML7OE4nT4
+GET http://localhost:8080/api/blog/tags/01JYBJFQH78T2HHDBYBZZQ91GT
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2NjI5ODIsImlhdCI6MTc1MDU3NjU4Miwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSllCN1hNOTlSSFRRUUZUNVBESlcxSEdKIiwidXNlcl9pZCI6IjAxSllCN1RTQVRRQ1k4RlNYS0hOWEI1UE5DIn0.POZtQoxlnc1kM7-qTRbqHgc5n1EpDI8bQyHeS6BYpJM
 
 ### Update Data
-PUT http://localhost:8080/api/blog/tags/01JY12SQHBP2TJGG6CSG7ZANTY
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkyMDcsImlhdCI6MTc1MDUzMjgwNywicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTVQWUY4TjQyRVdQTk5HMDJTRFRDIiwidXNlcl9pZCI6IjAxSlk5WTRIVjBHV0U4S1ZWN1dUTTZZQ1BSIn0.PJH637XW6t3zvaJLVDV1SMo75yh-ztPmaCML7OE4nT4
+PUT http://localhost:8080/api/blog/tags/01JYBJFQH78T2HHDBYBZZQ91GT
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2NjI5ODIsImlhdCI6MTc1MDU3NjU4Miwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSllCN1hNOTlSSFRRUUZUNVBESlcxSEdKIiwidXNlcl9pZCI6IjAxSllCN1RTQVRRQ1k4RlNYS0hOWEI1UE5DIn0.POZtQoxlnc1kM7-qTRbqHgc5n1EpDI8bQyHeS6BYpJM
 Content-Type: application/json
 
 {
-    "username": "tamu-beserta-penulis",
-    "email": "tamu-beserta-penulis@gmail.com",
-    "role_ids": ["01JXYT9YZ4Y728VWB60BNCAYD8", "p"]
+    "name": "Panser Biru",
+    "description": "Ini adalah salah satu definisi"
 }
 ###
 
 ### Delete data
-DELETE http://localhost:8080/api/blog/tags/01JY0TS5HEQA
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2MTkyMDcsImlhdCI6MTc1MDUzMjgwNywicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSlk5WTVQWUY4TjQyRVdQTk5HMDJTRFRDIiwidXNlcl9pZCI6IjAxSlk5WTRIVjBHV0U4S1ZWN1dUTTZZQ1BSIn0.PJH637XW6t3zvaJLVDV1SMo75yh-ztPmaCML7OE4nT4
+DELETE http://localhost:8080/api/blog/tags/01JYB7YSF5DMKT4ADTSB3BA6VB
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTA2NjI5ODIsImlhdCI6MTc1MDU3NjU4Miwicm9sZXMiOlsiYWRtaW4iXSwidG9rZW5fdmVyc2lvbiI6IjAxSllCN1hNOTlSSFRRUUZUNVBESlcxSEdKIiwidXNlcl9pZCI6IjAxSllCN1RTQVRRQ1k4RlNYS0hOWEI1UE5DIn0.POZtQoxlnc1kM7-qTRbqHgc5n1EpDI8bQyHeS6BYpJM

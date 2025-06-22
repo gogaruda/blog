@@ -1,13 +1,11 @@
-package model
+package response
 
-import "time"
-
-type TagModel struct {
+type CategoryModel struct {
 	ID             string
 	Name           string
 	Slug           string
+	Description    string
+	ParentID       *string
 	SeoTitle       string
 	SeoDescription string
-	CreatedAt      time.Time
-	UpdatedAt      time.Time
 }
